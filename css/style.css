@@ -11847,36 +11847,3 @@ textarea.form-control {
       font-size: 1.8rem;
   }
 }
-.section-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 4rem;
-  font-weight: 700;
-  color: #f2e9d8; /* Cream/beige color similar to the image */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 2rem;
-  text-align: center;
-  letter-spacing: 2px;
-}
-
-/* Add subtle animation on page load */
-.section-title {
-  animation: fadeInUp 0.8s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .section-title {
-      font-size: 3rem;
-  }
-}
