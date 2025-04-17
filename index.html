@@ -4,12 +4,12 @@
     <title>Aryan Sawant Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -17,10 +17,11 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/ionicons.min.css">
-    
+
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
 
@@ -115,8 +116,8 @@
 
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
+
+
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="index.html">Portfolio</a>
@@ -135,174 +136,198 @@
 	    </div>
 	  </nav>
 	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/Myphoto.png);">
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Namaste!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Aryan Sawant</span></h1>
-
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
-
-						<script>
-
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
-
-						// Create an array of typing text
-						const typingTexts = [
-						'AI\ML Engineer  ',
-						'Data Analyst  ',
-						'Deep Learning Enthusiast   ',
-						];
-
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
-
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
-						</script>
-
-						<br>
-						<br>
-			            <h2>IT Engineering Student</h2>
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<!-- <br> -->
-			            <p><a href="https://www.linkedin.com/in/aryan-sawant-b2326828a/" target="_blank" class="btn btn-primary py-3 px-3">LinkedIn</a> 
-							<a href="https://github.com/Aryan-sawant" target="_blank" class="btn btn-white btn-outline-white py-3 px-4">GitHub</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
+		<div class="particles"></div>
+		<div class="home-slider owl-carousel">
+			<div class="slider-item">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row d-md-flex no-gutters slider-text align-items-center justify-content-end">
+						<div class="one-third js-fullheight order-md-last">
+							<img src="images/Myphoto.png" alt="Aryan Sawant" class="img-fluid">
+						</div>
+						<div class="one-forth d-flex align-items-center ftco-animate">
+							<div class="text">
+								<span class="subheading">Namaste!</span>
+								<h1>I'm <span>Aryan Sawant</span></h1>
+								<span id="typing-animation" class="typing-text"></span>
+								<h2>IT Engineering Student</h2>
+								<div class="btn-container">
+									<a href="https://www.linkedin.com/in/aryan-sawant-b2326828a/" target="_blank" 
+									   class="btn btn-primary">
+									   <span class="icon-linkedin"></span> LinkedIn
+									</a>
+									<a href="https://github.com/Aryan-sawant" target="_blank" 
+									   class="btn btn-white">
+									   <span class="icon-github"></span> GitHub
+									</a>
+								</div>
+							</div>
+							
+							<script>
+							const typingAnimationElement = document.getElementById('typing-animation');
+							const typingTexts = [
+								'AI/ML Engineer',
+								'Data Analyst',
+								'Deep Learning Enthusiast'
+							];
+							
+							let currentIndex = 0;
+							
+							function typeText() {
+								// Clear the element
+								typingAnimationElement.textContent = '';
+								const text = typingTexts[currentIndex];
+								let charIndex = 0;
+							
+								const typing = setInterval(() => {
+									if (charIndex < text.length) {
+										typingAnimationElement.textContent += text[charIndex];
+										charIndex++;
+									} else {
+										clearInterval(typing);
+										// Wait for 2 seconds before moving to next text
+										setTimeout(() => {
+											currentIndex = (currentIndex + 1) % typingTexts.length;
+											typeText();
+										}, 2000);
+									}
+								}, 100);
+							}
+							
+							// Start the animation
+							typeText();
+							</script>
+					</div>
+				</div>
+			</div>
 		</div>
-    </section>
+	</section>
 
 
+	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+		<div class="container">
+			<div class="row d-flex align-items-stretch">
+				<!-- Left Column - Photo and Skills -->
+				<div class="col-md-6 col-lg-5">
+					<div class="about-left-section">
+						<!-- Profile Photo Container -->
+						<div class="profile-container">
+							<div class="about-img-wrapper">
+								<img src="images\About Photo.jpeg" class="profile-photo" alt="Aryan Sawant">
+								<div class="floating-shapes">
+									<div class="shape"></div>
+									<div class="shape"></div>
+									<div class="shape"></div>
+								</div>
+							</div>
+							<!-- Personal Info Card -->
+							<div class="personal-info-card">
+								<div class="about-info">
+									<p><span class="title-s">Name: </span><span>Aryan Sawant</span></p>
+									<p><span class="title-s">College: </span><span>Vidyalankar Institute of Technology</span></p>
+									<p><span class="title-s">Bachelor of Engineering: </span><span>Information Technology</span></p>
+									<p><span class="title-s">Address: </span><span>Mumbai, Maharashtra, India</span></p>
+								</div>
+							</div>
+						</div>
 
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-									  <div class="about-img">
-										<img src="images\About Photo.png" class="img-fluid rounded b-shadow-a" alt="">
-									  </div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-									  <div class="about-info">
-										<p><span class="title-s">Name: </span> <span>Aryan Sawant</span></p>
-										<p><span class="title-s">College: </span> <span>Vidyalankar Institute of Technology</span></p>
-										<p><span class="title-s">Bachelor of Engineering: </span> <span>Information Technology</span></p>
-										<p><span class="title-s">Address: </span> <span>Mumbai, Maharashtra, India</span></p>
-									  </div>
-									</div>
-								  </div>
+						<!-- Skills Section -->
+						<div class="skills-container">
+							<p class="title-s">Skills</p>
+							<div class="skill-item">
+								<div class="skill-header">
+									<span>Python</span>
+									<span class="pull-right">95%</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
 
-								<div class="skill-mf">
-									<p class="title-s">Skills</p>
-									<span>Python</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Power BI</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>SQL</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
+							<div class="skill-item">
+								<div class="skill-header">
+									<span>Power BI</span>
+									<span class="pull-right">90%</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
 
-									<span>Machine Learning/Deep Learning</span> <span class="pull-right">70%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Generative AI</span> <span class="pull-right">70%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
+							<div class="skill-item">
+								<div class="skill-header">
+									<span>SQL</span>
+									<span class="pull-right">85%</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+
+							<div class="skill-item">
+								<div class="skill-header">
+									<span>Machine Learning/Deep Learning</span>
+									<span class="pull-right">70%</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+
+							<div class="skill-item">
+								<div class="skill-header">
+									<span>Generative AI</span>
+									<span class="pull-right">70%</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 						</div>
 					</div>
-					
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-								
+				</div>
+
+				<!-- Right Column - About Info -->
+				<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+					<div class="about-right-section">
+						<div class="heading-section ftco-animate">
+							<h1 class="big">About</h1>
+							<h2 class="mb-4">About Me</h2>
+
+							<div class="about-description">
 								<p>Innovative engineer skilled in Deep Learning, Generative AI, Agentic AI, and Data Analytics. Expertise in building autonomous AI
 									systems, optimizing neural networks (TensorFlow), developing ML pipelines (scikit-learn), and leveraging vector databases
 									(AstraDB, Pinecone, etc) and LLM frameworks (LangChain, LangGraph, Langflow, etc) alongside SQL and Power BI to deliver
 									scalable, data-driven solutions. Passionate about crafting cutting-edge AI applications in collaborative environments.
-									</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Data Science &amp; Analytics</span></li>
-									<!-- <li class="d-flex"><span>Domain:</span> <span>Retail, Ecommerce, BFSI &amp; Digital Marketing</span></li> -->
-									<li class="d-flex"><span>Education:</span> <span>Bachelor of Engineering (IT)</span></li>
-									<li class="d-flex"><span>Language:</span> <span>English, Hindi, Marathi</span></li>
-									<li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI</span></li>
-									<li class="d-flex"><span>Other Skills:</span> <span>Phidata, Crew AI, SmolAgents, Autogen,
-										LlamaIndex, Streamlit, Statistics, Selenium</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Reading Spiritual Books, Powerlifting</span></li>
-									
-								</ul>
-							</div>
-						</div>
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="30">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
 								</p>
-								<p><a href="https://drive.google.com/file/d/1CQeMiVhGZ8ziqkTM-SCMttMd7RLE1V_Z/view?usp=sharing" target="_blank" class="btn btn-primary py-3 px-3">Download Resume</a></p>
+							</div>
+
+							<ul class="about-info mt-4 px-md-0 px-2">
+								<li class="d-flex"><span>Profile:</span> <span>Data Science &amp; Analytics</span></li>
+								<li class="d-flex"><span>Education:</span> <span>Bachelor of Engineering (IT)</span></li>
+								<li class="d-flex"><span>Language:</span> <span>English, Hindi, Marathi</span></li>
+								<li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI</span></li>
+								<li class="d-flex"><span>Other Skills:</span> <span>Phidata, Crew AI, SmolAgents, Autogen,
+									LlamaIndex, Streamlit, Statistics, Selenium</span></li>
+								<li class="d-flex"><span>Interest:</span> <span>Reading Spiritual Books, Powerlifting</span></li>
+							</ul>
+
+							<div class="counter-wrap ftco-animate d-flex mt-md-3">
+								<div class="text">
+									<p class="mb-4">
+										<span class="number" data-number="30">0</span>
+										<span>+</span>
+										<span>&nbsp; Projects completed</span>
+									</p>
+									<p><a href="https://drive.google.com/file/d/1CQeMiVhGZ8ziqkTM-SCMttMd7RLE1V_Z/view?usp=sharing" target="_blank" class="btn btn-primary py-3 px-3">Download Resume</a></p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-    </section>
+	</section>
 
 
     <section class="ftco-section" id="project-section">
@@ -315,14 +340,14 @@
           </div>
         </div>
         <div class="row d-flex">
-			
+
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="https://bonewise-analytics-suite.lovable.app/" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/BoneHealth.png');">
+              <a href="https://bonehealthaisuite.netlify.app/" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/BoneHealth.png');">
               </a>
               <div class="text mt-3 float-right d-block">
 
-                <h3 class="heading"><a href="https://bonewise-analytics-suite.lovable.app/" target="_blank">BoneHealthAISuite (Generative AI)</a></h3>
+                <h3 class="heading"><a href="https://bonehealthaisuite.netlify.app/" target="_blank">BoneHealthAISuite (Generative AI)</a></h3>
                 <p>A web application leveraging Google's Gemini AI to analyze medical images (X-rays, MRIs, CT scans) for various bone health conditions. Offers task-specific analysis, user-tailored explanations (for patients and doctors), and an interactive chat interface for follow-up questions.</p>
               </div>
             </div>
@@ -338,7 +363,7 @@
               </div>
             </div>
           </div>
-		  
+
           <div class="col-md-4 d-flex ftco-animate">
 			<div class="blog-entry justify-content-end">
 			<a href="https://github.com/Aryan-sawant/Western_Ghats_Bird_Species_Audio_Classification/blob/main/Birds_Species_Audio_Classification.ipynb" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/westernghat.png');">
@@ -354,14 +379,14 @@
         </div>
 	<br>
 		<!-- added justify-content-center to center align the last two projects -->
-		<div class="row d-flex justify-content-center"> 
+		<div class="row d-flex justify-content-center">
 
 			<div class="col-md-4 d-flex ftco-animate">
 				<div class="blog-entry justify-content-end">
 				<a href="https://drive.google.com/file/d/1LqIYb-EuwSlnosesML-65SmllfEl3kZW/view?usp=sharing" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/Fast Food.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-  
+
 				  <h3 class="heading"><a href="https://drive.google.com/file/d/1LqIYb-EuwSlnosesML-65SmllfEl3kZW/view?usp=sharing" target="_blank">Crunchy Corners (QSR Company) Analysis (Power BI + Excel)</a></h3>
 				  <p>Developed an advanced Power BI report for a Fast Food (QSR) company, handling large data sets, creating dynamic dashboards, and producing 11 detailed reports using DAX measures.</p>
 				</div>
@@ -372,19 +397,19 @@
 				<a href="https://drive.google.com/file/d/1HckWvCE64QqYQ3BKXn4aXRl0Ld_W_aeu/view?usp=sharing" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/IRCTC.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-  
+
 				  <h3 class="heading"><a href="https://drive.google.com/file/d/1HckWvCE64QqYQ3BKXn4aXRl0Ld_W_aeu/view?usp=sharing" target="_blank">IRCTC Financial Analysis (Power BI + Excel)</a></h3>
 				  <p> Extracted and cleaned 10 years of financial data, created dimension and fact tables, and built 8 reports analyzing P&L, Balance Sheet, Cash Flow, ROE, ROCE, and EBITDA.</p>
 				</div>
 			  </div>
 			</div>
-			
+
 			<div class="col-md-4 d-flex ftco-animate">
 			  <div class="blog-entry justify-content-end">
 			  <a href="https://github.com/Aryan-sawant/Bank-Loan-Finanace-Domain-Analysis-Power-Bi-SQL-" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/Bank Loan.png');">
 			  </a>
 			  <div class="text mt-3 float-right d-block">
-  
+
 				<h3 class="heading"><a href="https://github.com/Aryan-sawant/Bank-Loan-Finanace-Domain-Analysis-Power-Bi-SQL-" target="_blank">Bank Loan (Finance Domain) Analysis (Power BI + SQL)</a></h3>
 				<p>Comprehensive Power BI dashboard for bank loan analysis, using DAX for key metrics and SQL for data verification, with detailed visualizations.</p>
 			  </div>
@@ -396,7 +421,7 @@
 				<a href="https://github.com/Aryan-sawant/Uber-Mumbai-Analysis-Power-BI-SQL-" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/Uber.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-  
+
 				  <h3 class="heading"><a href="https://github.com/Aryan-sawant/Uber-Mumbai-Analysis-Power-BI-SQL-" target="_blank">Uber Mumbai Analysis (Power BI + SQL)</a></h3>
 				  <p>Comprehensive Uber Mumbai data analysis using Power BI and SQL, with advanced queries and detailed visualizations of trips, fares, locations, and more.</p>
 				</div>
@@ -408,7 +433,7 @@
 				<a href="https://drive.google.com/file/d/1vj_KIZuoEIBKcWr-D_8mfz9ZvN5AFyDc/view?usp=sharing" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/Car sales.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-  
+
 				  <h3 class="heading"><a href="https://drive.google.com/file/d/1vj_KIZuoEIBKcWr-D_8mfz9ZvN5AFyDc/view?usp=sharing" target="_blank">Car Sales Dashboard (Power BI)</a></h3>
 				  <p>Explore insights from car sales data with Power BI. Utilized DAX functions for YTD totals, average sales, MTD, MoM analysis, and more. Visualize trends and performance metrics effectively.</p>
 				</div>
@@ -419,7 +444,7 @@
 				<a href="https://github.com/Aryan-sawant/Zomato-Analysis-SQL-" target="_blank" class="block-20 zoom-effect" style="background-image: url('https://logodownload.org/wp-content/uploads/2020/02/zomato-logo-1-1536x1536.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-  
+
 				  <h3 class="heading"><a href="https://github.com/Aryan-sawant/Zomato-Analysis-SQL-" target="_blank">Zomato Data Analysis (SQL)</a></h3>
 				  <p>Advanced SQL analysis of Zomato data, using joins, date functions, and ranking to uncover insights on user behavior, sales trends, and product performance.</p>
 				</div>
@@ -429,102 +454,94 @@
 	  </div>
     </section>
 
+
+	<section id="contact-section" class="contact-3d">
+		<div class="container">
+			<div class="section-header">
+				<h1 class="gradient-title">Contact Me</h1>
+				<p class="subtitle">Let's create something amazing together</p>
+			</div>
 	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>More projects on<span> Github  </span> </h2>
-						<div class="heading"> <h4> I love to solve technical problems,derive insights from the data &amp; uncover hidden data stories </h4>
-						<br>
-						<p><a href="https://github.com/Aryan-sawant" class="btn btn-primary py-3 px-5" target="_blank">GitHub</a></p>
+			<div class="contact-grid">
+				<!-- Address Card -->
+				<div class="contact-card-3d">
+					<div class="card-content">
+						<div class="icon-3d">
+							<i class="fas fa-map-marker-alt"></i>
 						</div>
+						<h3>Location</h3>
+						<p>Mumbai, Maharashtra, India</p>
 					</div>
+					<div class="card-shine"></div>
 				</div>
-			<!-- </div> -->
+	
+				<!-- Phone Card -->
+				<div class="contact-card-3d">
+					<div class="card-content">
+						<div class="icon-3d">
+							<i class="fas fa-phone-alt"></i>
+						</div>
+						<h3>Phone</h3>
+						<p>+91 8356072365</p>
+					</div>
+					<div class="card-shine"></div>
+				</div>
+	
+				<!-- Email Card -->
+				<div class="contact-card-3d">
+					<div class="card-content">
+						<div class="icon-3d">
+							<i class="fas fa-envelope"></i>
+						</div>
+						<h3>Email</h3>
+						<p><a href="mailto:umeshsawant112233@gmail.com">umeshsawant112233@gmail.com</a></p>
+					</div>
+					<div class="card-shine"></div>
+				</div>
+	
+				<!-- Resume Card -->
+				<div class="contact-card-3d">
+					<div class="card-content">
+						<div class="icon-3d">
+							<i class="fas fa-file-alt"></i>
+						</div>
+						<h3>Resume</h3>
+						<p><a href="https://drive.google.com/file/d/1CQeMiVhGZ8ziqkTM-SCMttMd7RLE1V_Z/view?usp=sharing" target="_blank" class="resume-link">Download CV</a></p>
+					</div>
+					<div class="card-shine"></div>
+				</div>
+			</div>
+	
+			<!-- Question Section -->
+			<div class="question-container">
+				<div class="question-box-3d">
+					<h2>Have a Question?</h2>
+					<a href="https://forms.gle/4QEiEwUKT9YXUpVu7" class="cta-button" target="_blank">
+						Send Message
+					</a>
+				</div>
+			</div>
+	
+			<!-- Social Links -->
+			<div class="social-container">
+				<div class="social-links">
+					<a href="https://www.linkedin.com/in/aryan-sawant-b2326828a/" target="_blank" class="social-icon-3d">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
+					<a href="https://github.com/Aryan-sawant" target="_blank" class="social-icon-3d">
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
+			</div>
 		</div>
 	</section>
 
 
-
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Mumbai, Maharashtra, India</p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101">+91 8356072365</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">umeshsawant112233@gmail.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="https://drive.google.com/file/d/1CQeMiVhGZ8ziqkTM-SCMttMd7RLE1V_Z/view?usp=sharing" target="_blank">Resume Link</a></p>
-	          </div>
-          </div>
-
-		  <div class="container">
-			<br>
-			<br>
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://forms.gle/4QEiEwUKT9YXUpVu7" class="btn btn-primary py-3 px-5" target="_blank">Click Here</a> </h2>
-				</div>
-			</div>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <!-- <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li> -->
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/aryan-sawant-b2326828a/" target="_blank"><span class="icon-linkedin"></span></a></li>  
-					  <li class="ftco-animate"><a href="https://github.com/Aryan-sawant" target="_blank"><span class="icon-github"></span></a></li>
-					  <!-- <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-facebook"></span></a></li> -->
-				      <!-- <li class="ftco-animate"><a href="https://www.instagram.com/rishabhnmishra/"><span class="icon-instagram"></span></a></li> -->
-					</ul>
-				<br>
-		   </div>
-   </div>
- </section>
-
-
- 
-	
     <footer class="ftco-footer ftco-section">
 		<div class="container">
 		  <div class="row">
 			<div class="col-md-12 text-center">
-  
+
 			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 			</div>
@@ -549,8 +566,8 @@
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  
+
   <script src="js/main.js"></script>
-    
+
   </body>
 </html>
