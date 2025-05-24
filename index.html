@@ -110,6 +110,15 @@
   transform: scale(1.1);
 }
 
+/* Style for project buttons to ensure they are on new line if needed and have some margin */
+.project-links {
+    margin-top: 10px; /* Add some space above the buttons */
+}
+
+.project-links .btn {
+    margin-right: 5px; /* Space between buttons if you add more */
+    margin-bottom: 5px; /* Space below buttons if they wrap */
+}
 
 </style>
 
@@ -152,17 +161,17 @@
 								<span id="typing-animation" class="typing-text"></span>
 								<h2>IT Engineering Student</h2>
 								<div class="btn-container">
-									<a href="https://www.linkedin.com/in/aryan-sawant-b2326828a/" target="_blank" 
+									<a href="https://www.linkedin.com/in/aryan-sawant-b2326828a/" target="_blank"
 									   class="btn btn-primary">
 									   <span class="icon-linkedin"></span> LinkedIn
 									</a>
-									<a href="https://github.com/Aryan-sawant" target="_blank" 
+									<a href="https://github.com/Aryan-sawant" target="_blank"
 									   class="btn btn-white">
 									   <span class="icon-github"></span> GitHub
 									</a>
 								</div>
 							</div>
-							
+
 							<script>
 							const typingAnimationElement = document.getElementById('typing-animation');
 							const typingTexts = [
@@ -170,15 +179,15 @@
 								'Data Analyst',
 								'Deep Learning Enthusiast'
 							];
-							
+
 							let currentIndex = 0;
-							
+
 							function typeText() {
 								// Clear the element
 								typingAnimationElement.textContent = '';
 								const text = typingTexts[currentIndex];
 								let charIndex = 0;
-							
+
 								const typing = setInterval(() => {
 									if (charIndex < text.length) {
 										typingAnimationElement.textContent += text[charIndex];
@@ -193,7 +202,7 @@
 									}
 								}, 100);
 							}
-							
+
 							// Start the animation
 							typeText();
 							</script>
@@ -303,7 +312,7 @@
 							</div>
 
 							<ul class="about-info mt-4 px-md-0 px-2">
-								<li class="d-flex"><span>Profile:</span> <span>Data Science &amp; Analytics</span></li>
+								<li class="d-flex"><span>Profile:</span> <span>Data Science & Analytics</span></li>
 								<li class="d-flex"><span>Education:</span> <span>Bachelor of Engineering (IT)</span></li>
 								<li class="d-flex"><span>Language:</span> <span>English, Hindi, Marathi</span></li>
 								<li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI</span></li>
@@ -317,7 +326,7 @@
 									<p class="mb-4">
 										<span class="number" data-number="30">0</span>
 										<span>+</span>
-										<span>&nbsp; Projects completed</span>
+										<span>  Projects completed</span>
 									</p>
 									<p><a href="https://drive.google.com/file/d/1LxkOE9t6QZne7e2LIRVlQx419BsaiXD5/view?usp=sharing" target="_blank" class="btn btn-primary py-3 px-3">Download Resume</a></p>
 								</div>
@@ -346,9 +355,13 @@
               <a href="https://bonehealthaisuite.netlify.app/" target="_blank" class="block-20 zoom-effect" style="background-image: url('https://github.com/Aryan-sawant/bonewise-analytics-suite/raw/main/Landing%20Page.png?raw=true');">
               </a>
               <div class="text mt-3 float-right d-block">
-
                 <h3 class="heading"><a href="https://bonehealthaisuite.netlify.app/" target="_blank">BoneHealthAISuite (Generative AI)</a></h3>
                 <p>A web application leveraging Google's Gemini AI to analyze medical images (X-rays, MRIs, CT scans) for various bone health conditions. Offers task-specific analysis, user-tailored explanations (for patients and doctors), and an interactive chat interface for follow-up questions.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Aryan-sawant/bonewise-analytics-suite" target="_blank" class="btn btn-primary py-3 px-3">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
               </div>
             </div>
           </div>
@@ -357,9 +370,9 @@
               <a href="https://www.langflow.org/" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/Langflow.png');">
 			  </a>
               <div class="text mt-3 float-right d-block">
-
                 <h3 class="heading"><a href="https://www.langflow.org/" target="_blank">RAG system using LangFlow and DataStax VectorDB (Agentic AI)</a></h3>
                 <p>An end-to-end Agentic AI RAG system using LangFlow and DataStax VectorDB without writing any code. Just drag, drop and configure the components. The system processes data, embeds it using Astra Vectorizers, and retrieves answers via a database agent (Groq API) or a web search agent (Google API).</p>
+               
               </div>
             </div>
           </div>
@@ -369,9 +382,13 @@
 			<a href="https://github.com/Aryan-sawant/Western_Ghats_Bird_Species_Audio_Classification/blob/main/Birds_Species_Audio_Classification.ipynb" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/westernghat.png');">
 			</a>
 			<div class="text mt-3 float-right d-block">
-
 			  <h3 class="heading"><a href="https://github.com/Aryan-sawant/Western_Ghats_Bird_Species_Audio_Classification/blob/main/Birds_Species_Audio_Classification.ipynb" target="_blank">Western Ghats Bird Species Audio Classification (Deep Learning)</a></h3>
 			  <p>Built a CNN model to classify 53 Western Ghats bird species from audio using mel-frequency spectrograms. Integrated with Gradio for real-time species prediction with image and 3D model outputs. Enhanced with data augmentation for robustness.</p>
+              <div class="project-links">
+                  <a href="https://github.com/Aryan-sawant/Western_Ghats_Bird_Species_Audio_Classification" target="_blank" class="btn btn-primary py-3 px-3">
+                      <i class="fab fa-github"></i> View on GitHub
+                  </a>
+              </div>
 			</div>
 		  </div>
 		</div>
@@ -386,9 +403,13 @@
 				<a href="https://drive.google.com/file/d/1LqIYb-EuwSlnosesML-65SmllfEl3kZW/view?usp=sharing" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/Fast Food.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-
 				  <h3 class="heading"><a href="https://drive.google.com/file/d/1LqIYb-EuwSlnosesML-65SmllfEl3kZW/view?usp=sharing" target="_blank">Crunchy Corners (QSR Company) Analysis (Power BI + Excel)</a></h3>
 				  <p>Developed an advanced Power BI report for a Fast Food (QSR) company, handling large data sets, creating dynamic dashboards, and producing 11 detailed reports using DAX measures.</p>
+                  <div class="project-links">
+                      <a href="https://github.com/Aryan-sawant/Crunchy-Corners-Advance-Power-BI-Dashboard" target="_blank" class="btn btn-primary py-3 px-3">
+                          <i class="fab fa-github"></i> View on GitHub
+                      </a>
+                  </div>
 				</div>
 			  </div>
 			</div>
@@ -397,9 +418,13 @@
 				<a href="https://drive.google.com/file/d/1HckWvCE64QqYQ3BKXn4aXRl0Ld_W_aeu/view?usp=sharing" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/IRCTC.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-
 				  <h3 class="heading"><a href="https://drive.google.com/file/d/1HckWvCE64QqYQ3BKXn4aXRl0Ld_W_aeu/view?usp=sharing" target="_blank">IRCTC Financial Analysis (Power BI + Excel)</a></h3>
 				  <p> Extracted and cleaned 10 years of financial data, created dimension and fact tables, and built 8 reports analyzing P&L, Balance Sheet, Cash Flow, ROE, ROCE, and EBITDA.</p>
+                  <div class="project-links">
+                      <a href="https://github.com/Aryan-sawant/IRCTC-Financial-Analysis-Power-BI-Dashboard" target="_blank" class="btn btn-primary py-3 px-3">
+                          <i class="fab fa-github"></i> View on GitHub
+                      </a>
+                  </div>
 				</div>
 			  </div>
 			</div>
@@ -409,9 +434,13 @@
 			  <a href="https://github.com/Aryan-sawant/Bank-Loan-Finanace-Domain-Analysis-Power-Bi-SQL-" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/Bank Loan.png');">
 			  </a>
 			  <div class="text mt-3 float-right d-block">
-
 				<h3 class="heading"><a href="https://github.com/Aryan-sawant/Bank-Loan-Finanace-Domain-Analysis-Power-Bi-SQL-" target="_blank">Bank Loan (Finance Domain) Analysis (Power BI + SQL)</a></h3>
 				<p>Comprehensive Power BI dashboard for bank loan analysis, using DAX for key metrics and SQL for data verification, with detailed visualizations.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Aryan-sawant/Bank-Loan-Finanace-Domain-Analysis-Power-Bi-SQL-" target="_blank" class="btn btn-primary py-3 px-3">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
 			  </div>
 			</div>
 		  </div>
@@ -421,32 +450,29 @@
 				<a href="https://github.com/Aryan-sawant/Uber-Mumbai-Analysis-Power-BI-SQL-" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/Uber.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-
 				  <h3 class="heading"><a href="https://github.com/Aryan-sawant/Uber-Mumbai-Analysis-Power-BI-SQL-" target="_blank">Uber Mumbai Analysis (Power BI + SQL)</a></h3>
 				  <p>Comprehensive Uber Mumbai data analysis using Power BI and SQL, with advanced queries and detailed visualizations of trips, fares, locations, and more.</p>
+                  <div class="project-links">
+                      <a href="https://github.com/Aryan-sawant/Uber-Mumbai-Analysis-Power-BI-SQL-" target="_blank" class="btn btn-primary py-3 px-3">
+                          <i class="fab fa-github"></i> View on GitHub
+                      </a>
+                  </div>
 				</div>
 			  </div>
 			</div>
 
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://drive.google.com/file/d/1vj_KIZuoEIBKcWr-D_8mfz9ZvN5AFyDc/view?usp=sharing" target="_blank" class="block-20 zoom-effect" style="background-image: url('images/Car sales.png');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-
-				  <h3 class="heading"><a href="https://drive.google.com/file/d/1vj_KIZuoEIBKcWr-D_8mfz9ZvN5AFyDc/view?usp=sharing" target="_blank">Car Sales Dashboard (Power BI)</a></h3>
-				  <p>Explore insights from car sales data with Power BI. Utilized DAX functions for YTD totals, average sales, MTD, MoM analysis, and more. Visualize trends and performance metrics effectively.</p>
-				</div>
-			  </div>
-			</div>
 			<div class="col-md-4 d-flex ftco-animate">
 				<div class="blog-entry justify-content-end">
 				<a href="https://github.com/Aryan-sawant/Zomato-Analysis-SQL-" target="_blank" class="block-20 zoom-effect" style="background-image: url('https://logodownload.org/wp-content/uploads/2020/02/zomato-logo-1-1536x1536.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-
 				  <h3 class="heading"><a href="https://github.com/Aryan-sawant/Zomato-Analysis-SQL-" target="_blank">Zomato Data Analysis (SQL)</a></h3>
 				  <p>Advanced SQL analysis of Zomato data, using joins, date functions, and ranking to uncover insights on user behavior, sales trends, and product performance.</p>
+                  <div class="project-links">
+                      <a href="https://github.com/Aryan-sawant/Zomato-Analysis-SQL-" target="_blank" class="btn btn-primary py-3 px-3">
+                          <i class="fab fa-github"></i> View on GitHub
+                      </a>
+                  </div>
 				</div>
 			  </div>
 			</div>
@@ -461,7 +487,7 @@
 				<h1 class="gradient-title">Contact Me</h1>
 				<p class="subtitle">Let's create something amazing together</p>
 			</div>
-	
+
 			<div class="contact-grid">
 				<!-- Address Card -->
 				<div class="contact-card-3d">
@@ -474,7 +500,7 @@
 					</div>
 					<div class="card-shine"></div>
 				</div>
-	
+
 				<!-- Phone Card -->
 				<div class="contact-card-3d">
 					<div class="card-content">
@@ -486,7 +512,7 @@
 					</div>
 					<div class="card-shine"></div>
 				</div>
-	
+
 				<!-- Email Card -->
 				<div class="contact-card-3d">
 					<div class="card-content">
@@ -498,7 +524,7 @@
 					</div>
 					<div class="card-shine"></div>
 				</div>
-	
+
 				<!-- Resume Card -->
 				<div class="contact-card-3d">
 					<div class="card-content">
@@ -511,7 +537,7 @@
 					<div class="card-shine"></div>
 				</div>
 			</div>
-	
+
 			<!-- Question Section -->
 			<div class="question-container">
 				<div class="question-box-3d">
@@ -521,7 +547,7 @@
 					</a>
 				</div>
 			</div>
-	
+
 			<!-- Social Links -->
 			<div class="social-container">
 				<div class="social-links">
